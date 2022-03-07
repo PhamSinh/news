@@ -1,0 +1,39 @@
+<html>
+<head>
+
+<title>WebStandard example</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">              
+</head>
+
+ <body>
+
+   <form id="SendPayForm_id" name="" method="POST" >
+
+        <input type="text"    name="goodname" value="테스트" >
+        <input type="text"    name="buyername" value="홍길동" >
+        <input type="text"    name="buyertel" value="010-1234-5678" >
+        <input type="text"    name="buyeremail" value="test@inicis.com" >
+        <input type="text"    name="price" value="1000" >
+        <input type="hidden"  name="mid" value="INIpayTest" ><!-- 에스크로테스트 : iniescrow0, 빌링(정기과금)테스트 : INIBillTst -->
+        <input type="hidden"  name="gopaymethod" value="Card" >
+        <input type="hidden"  name="mKey" value="3a9503069192f207491d4b19bd743fc249a761ed94246c8c42fed06c3cd15a33" >
+        <input type="hidden"  name="signature" value="aa879a917b2bacf1bfc4bbbba3d5743ea18a380b770482ff83ee34a9ee845eb5" >
+        <input type="hidden"  name="oid" value="INIpayTest_1637337360495" >
+        <input type="hidden"  name="timestamp" value="1637337360495" >
+        <input type="hidden"  name="version" value="1.0" >
+        <input type="hidden"  name="currency" value="WON" >
+        <input type="hidden"  name="acceptmethod" value="below1000" ><!-- 에스크로옵션 : useescrow, 빌링(정기과금)옵션 : BILLAUTH(Card) -->
+        <input type="hidden"  name="returnUrl" value="http://localhost:63573/stdpay/INIStdPayRequest.jsp" >
+        <!-- <input type="hidden"  name="returnUrl" value="http://localhost:54638/stdpay/INIStdPayReturn.jsp" > -->
+        <!-- <input type="hidden"  name="returnUrl" value="http://localhost:54638/stdpay/scriptEventCard.js" > -->
+        <input type="hidden"  name="closeUrl" value="http://localhost:63573/stdpay/close.asp" >
+
+   </form>     
+
+      <button onclick="INIStdPay.pay('SendPayForm_id')" style="padding:10px; margin-left:10%">결제요청</button>
+
+ </body>
+</html>
+
+
+<router-outlet></router-outlet>
